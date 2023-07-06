@@ -40,7 +40,7 @@ void setup()
 
 void loop()
 {
-  pixels.clear();     // Apagamos todos los LEDs
+  pixels.clear();     // Apagam todos los LEDs
 
   for(int i=0; i<NUMPIXELS; i++)    // Para cada pixel...
   {
