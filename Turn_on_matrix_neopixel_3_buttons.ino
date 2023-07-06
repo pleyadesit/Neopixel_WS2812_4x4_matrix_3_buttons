@@ -62,7 +62,7 @@ void loop()
     }
     if (Color_R == LOW && Color_G == LOW && Color_B == LOW)
     {
-      R = 128; G = 128; B = 128;      // Establece color (R, G, B) --> BLUE
+      R = 128; G = 128; B = 128;  // Establece color (R, G, B) --> BLUE
     }
     pixels.setPixelColor(i, pixels.Color(R, G, B));     // Establece color (R, G, B)
     pixels.show();        // Mandamos todos los colores con la actualización hecha
