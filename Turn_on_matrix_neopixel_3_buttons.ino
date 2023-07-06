@@ -1,5 +1,5 @@
 // Enciende LED Neopixel uno a uno y cambia al color (RGB) del botón pulsado (3 botones, uno para color RGB).
-// PLÉYADES IT
+// Written by PLÉYADES IT
 
 #include <Adafruit_NeoPixel.h>
 
