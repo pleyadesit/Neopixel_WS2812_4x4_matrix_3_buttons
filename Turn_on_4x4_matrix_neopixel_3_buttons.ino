@@ -13,16 +13,12 @@ int R = 128;
 int G = 128;
 int B = 128;
 
-// Pin digital del Arduino al cual conectamos pin DIN la tira o matriz LED.
-#define PIN 6
+#define PIN 6           // Pin digital del Arduino al cual conectamos pin DIN la tira o matriz LED.
 
-// Número de píxeles de la matriz 4x4
-#define NUMPIXELS 16
+#define NUMPIXELS 16    // Número de píxeles de la matriz 4x4
 
-// Intensidad del brillo de los LED NeoPixel, 0 (min) to 255 (max)
-#define BRIGHTNESS 1    // Set BRIGHTNESS (max = 255)
+#define BRIGHTNESS 1    // Set BRIGHTNESS (min = 0, max = 255)
 
-// Inicializamos objeto "pixeles"
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 #define DELAYVAL 165    // Asigna ms a la variable DELAYVAL
