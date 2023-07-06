@@ -66,6 +66,6 @@ void loop()
     }
     pixels.setPixelColor(i, pixels.Color(R, G, B));     // Establece color (R, G, B)
     pixels.show();        // Mandamos todos los colores con la actualización hecha
-    delay(DELAYVAL);      // Pausa antes de modificar el color del siguiente LED
+    delay(DELAYVAL);      // Pausa antes de iluminar el color del siguiente LED
   }
 }
