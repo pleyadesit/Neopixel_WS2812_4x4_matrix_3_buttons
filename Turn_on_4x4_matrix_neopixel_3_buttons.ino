@@ -14,13 +14,13 @@ int G = 128;
 int B = 128;
 
 // Pin digital del Arduino al cual conectamos pin DIN la tira o matriz LED.
-#define PIN 6 
+#define PIN 6
 
 // Número de píxeles de la matriz 4x4
 #define NUMPIXELS 16
 
 // Intensidad del brillo de los LED NeoPixel, 0 (min) to 255 (max)
-#define BRIGHTNESS 1    // Set BRIGHTNESS to about 1/5 (max = 255)
+#define BRIGHTNESS 1    // Set BRIGHTNESS (max = 255)
 
 // Inicializamos objeto "pixeles"
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
@@ -29,7 +29,7 @@ Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 void setup()
 {
-  pixels.begin();       // Inicializamos el objeto "pixeles"
+  pixels.begin();
   pixels.setBrightness(BRIGHTNESS);
   
   pinMode(RED_button, INPUT_PULLUP);    // Activa resistencia Pull-up interna en este pin
@@ -42,30 +42,29 @@ void loop()
 {
   pixels.clear();     // Apaga todos los LEDs
 
-  for(int i=0; i<NUMPIXELS; i++)    // Para cada pixel...
+  for(int i=0; i<NUMPIXELS; i++)
   {
-    // Modificamos el LED #i teniendo en cuenta si se ha pulsado uno de los botones selectores de color
     Color_R = digitalRead(RED_button);
     if (Color_R == LOW)
     {
-      R = 128; G = 0; B = 0;      // Establece color (R, G, B) --> RED
+      R = 128; G = 0; B = 0;
     }
     Color_G = digitalRead(GREEN_button);
     if (Color_G == LOW)
     {
-      R = 0; G = 128; B = 0;      // Establece color (R, G, B) --> GREEN
+      R = 0; G = 128; B = 0;
     }
     Color_B = digitalRead(BLUE_button);
     if (Color_B == LOW)
     {
-      R = 0; G = 0; B = 128;      // Establece color (R, G, B) --> BLUE
+      R = 0; G = 0; B = 128;
     }
     if (Color_R == LOW && Color_G == LOW && Color_B == LOW)
     {
-      R = 128; G = 128; B = 128;  // Establece color (R, G, B) --> BLUE
+      R = 128; G = 128; B = 128;
     }
-    pixels.setPixelColor(i, pixels.Color(R, G, B));     // Establece color (R, G, B)
-    pixels.show();        // Mandamos todos los colores con la actualización hecha
-    delay(DELAYVAL);      // Pausa antes de iluminar el siguiente LED
+    pixels.setPixelColor(i, pixels.Color(R, G, B));
+    pixels.show();
+    delay(DELAYVAL);
   }
 }
